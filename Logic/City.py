@@ -136,7 +136,7 @@ class City:
             self.game_is_over()
 
     def game_is_over(self):
-        total_score = self.model.population * 1.25 + self.model.bushels
+        total_score = self.model.population * 100 + self.model.bushels
         self.view.info_text.set("Game Over! Your total Score: " + str(total_score))
 
     def start(self):
