@@ -12,6 +12,7 @@ class Model:
         self.acres = 1000
         self.cost_per_acre = Randoms.RND_TRADE
         self.plague = Randoms.RND_PLAGUE
+        self.acres_with_seeds = 0
 
         self.buy_or_sell = 0
         self.feed = 0
@@ -20,3 +21,8 @@ class Model:
     def calc_population(self):
         self.population = self.bushels / 20
 
+    def update_randoms(self):
+        self.harvest_per_acre = Randoms.RND_HARVEST
+        self.rats = Randoms.RND_RATS
+        self.cost_per_acre = Randoms.RND_TRADE
+        self.plague = Randoms.RND_PLAGUE

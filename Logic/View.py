@@ -11,28 +11,55 @@ class View:
         self.window.geometry("600x400")
         self.window.title(StringConstants.TITLE)
 
-        self.lbl_year = tk.Label(self.window, text=StringConstants.LBL_YEAR + " 1")
+        self.year = tk.StringVar()
+        self.year.set(StringConstants.LBL_YEAR + " 1")
+        self.lbl_year = tk.Label(self.window, textvariable=self.year)
         self.lbl_year.grid(row=0, column=0, sticky="W")
 
-        self.lbl_starved = tk.Label(self.window, text="0 " + StringConstants.LBL_STARVED)
+        self.starved = tk.StringVar()
+        self.starved.set("0" + StringConstants.LBL_STARVED)
+        self.lbl_starved = tk.Label(self.window, textvariable=self.starved)
         self.lbl_starved.grid(row=1, column=0, sticky="W")
 
-        self.lbl_immigrants = tk.Label(self.window, text=StringConstants.LBL_IMMIGRANTS + " 0")
+        self.immigrants = tk.StringVar()
+        self.immigrants.set(StringConstants.LBL_IMMIGRANTS + "0")
+        self.lbl_immigrants = tk.Label(self.window, textvariable=self.immigrants)
         self.lbl_immigrants.grid(row=2, column=0, sticky="W")
-        self.lbl_population = tk.Label(self.window, text=StringConstants.LBL_POPULATION + " 100")
+
+        self.population = tk.StringVar()
+        self.population.set(StringConstants.LBL_POPULATION + "100")
+        self.lbl_population = tk.Label(self.window, textvariable=self.population)
         self.lbl_population.grid(row=3, column=0, sticky="W")
-        self.lbl_harvest_per_acre = tk.Label(self.window, text=StringConstants.LBL_HARV_P_ACRE + " 0")
+
+        self.harvest_per_acre = tk.StringVar()
+        self.harvest_per_acre.set(StringConstants.LBL_HARV_P_ACRE + "0")
+        self.lbl_harvest_per_acre = tk.Label(self.window, textvariable=self.harvest_per_acre)
         self.lbl_harvest_per_acre.grid(row=4, column=0, sticky="W")
-        self.lbl_bushels = tk.Label(self.window, text=StringConstants.LBL_BUSHELS + " 2800")
+
+        self.bushels = tk.StringVar()
+        self.bushels.set(StringConstants.LBL_BUSHELS + "2800")
+        self.lbl_bushels = tk.Label(self.window, textvariable=self.bushels)
         self.lbl_bushels.grid(row=5, column=0, sticky="W")
-        self.lbl_rats = tk.Label(self.window, text="0 " + StringConstants.LBL_RATS)
+
+        self.rats = tk.StringVar()
+        self.rats.set("0" + StringConstants.LBL_RATS)
+        self.lbl_rats = tk.Label(self.window, textvariable=self.rats)
         self.lbl_rats.grid(row=6, column=0, sticky="W")
-        self.lbl_acres = tk.Label(self.window, text=StringConstants.LBL_ACRES + " 1000")
+
+        self.acres = tk.StringVar()
+        self.acres.set(StringConstants.LBL_ACRES + "1000")
+        self.lbl_acres = tk.Label(self.window, textvariable=self.acres)
         self.lbl_acres.grid(row=7, column=0, sticky="W")
+
+        self.cost_acre = tk.StringVar()
+        self.cost_acre.set(StringConstants.LBL_COST_P_ACRE + str(Randoms.RND_TRADE))
         self.lbl_cost_acre = tk.Label(self.window,
-                                      text=StringConstants.LBL_COST_P_ACRE + " " + str(Randoms.RND_TRADE))
+                                      textvariable=self.cost_acre)
         self.lbl_cost_acre.grid(row=8, column=0, sticky="W")
-        self.lbl_plague = tk.Label(self.window, text="0 " + StringConstants.LBL_PLAGUE)
+
+        self.plague = tk.StringVar()
+        self.plague.set("0" + StringConstants.LBL_PLAGUE)
+        self.lbl_plague = tk.Label(self.window, textvariable=self.plague)
         self.lbl_plague.grid(row=9, column=0, sticky="W")
 
         self.lbl_buy = tk.Label(self.window, text=StringConstants.LBL_BUY_SELL)
@@ -64,15 +91,6 @@ class View:
     def change(self, which_btn):
         if self.listener:
             self.listener(which_btn)
-
-    def get_buy_sell(self):
-        return self.inp_buy.get()
-
-    def get_feed(self):
-        return self.inp_feed.get()
-
-    def get_plant(self):
-        return self.inp_plant.get()
 
     def show(self):
         self.window.mainloop()
