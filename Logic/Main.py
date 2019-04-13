@@ -1,6 +1,6 @@
 import tkinter as tk
+from Logic import View as view, StringConstants
 
-from Logic import View as view
 
 class Main:
     def __init__(self):
@@ -9,11 +9,12 @@ class Main:
         self.initGui()
 
     def initGui(self):
-        self.tk.geometry("400x200")
-        self.tk.title("Hammurabi")
+        self.tk.geometry("600x400")
+        self.tk.title(StringConstants.TITLE)
 
     def run(self):
         self.tk.mainloop()
+
 
 game = Main()
 game.run()
