@@ -1,5 +1,5 @@
 import unittest
-from unittest.mock import MagicMock
+
 from Logic import City
 from Logic import Model
 from Logic import View
@@ -73,6 +73,7 @@ class CityTest(unittest.TestCase):
         self.assertEqual(self.model.starved, 0)
         self.assertEqual(self.model.immigrants, 0)
         self.assertEqual(self.model.acres_with_seeds, 0)
+
 
 if __name__ == '__main__':
     unittest.main()

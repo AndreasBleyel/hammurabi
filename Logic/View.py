@@ -1,6 +1,7 @@
 import tkinter as tk
 from Logic import StringConstants
 
+
 class View:
     def __init__(self):
         self.listener = None
@@ -73,6 +74,10 @@ class View:
         self.info_text = tk.StringVar()
         self.lbl_info = tk.Label(self.window, textvariable=self.info_text)
         self.lbl_info.grid(row=15)
+
+        self.btn_restart = tk.Button(self.window, text=StringConstants.BTN_RESTART,
+                                     command=lambda: self.change("res"))
+        self.btn_restart.grid(row=16)
 
     def set_listener(self, listener):
         self.listener = listener

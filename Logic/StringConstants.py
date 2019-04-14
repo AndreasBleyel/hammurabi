@@ -16,3 +16,5 @@ LBL_FEED = "How many bushels do you wish to feed your people? current need: "
 LBL_PLANT = "How many acres do you wish to plant with seed?"
 
 BTN_ADVANCE = "Advance to next year"
+BTN_RESTART = "Restart game"
+
