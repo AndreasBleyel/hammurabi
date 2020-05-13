@@ -1,4 +1,6 @@
-# hammurabi
+# Hammurabi
+
+An implementation of the Hammurabi game in Python under the use of the agile SCRUM development method.
 
 ## Sprint - Initial
 ![Initial Sprint](Sprint/0InitialSprint.png "Initial Sprint")
